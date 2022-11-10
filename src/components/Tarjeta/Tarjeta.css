@@ -1,0 +1,34 @@
+.tarjeta {
+    width: 350px;
+    height: 300px;
+    border: 1px silver solid;
+    display: flex;
+    flex-flow: row wrap;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 5px 5px rgb(201, 201, 201);
+    padding: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+}
+
+.tarjeta:hover {
+    box-shadow: 0 1px 15px rgb(134, 134, 255);
+    transition: background-color 0.25s;
+}
+
+.tarjeta:active {
+    background-color: rgb(230, 230, 230);
+}
+
+.tarjeta img {
+    width: 100%;
+    max-width: 350px;
+    height: 230px;
+}
+
+.tarjeta p {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
