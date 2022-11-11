@@ -1,0 +1,8 @@
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px 25px;
+    margin: 15px;
+}
