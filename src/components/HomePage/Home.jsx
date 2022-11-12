@@ -36,7 +36,7 @@ const Home = () => {
 
             <div className='usos'>
                 <h2>FACIL DE USAR</h2>
-                <div className='uso-list'>
+                <div className='uso'>
                     <ul>
                         <li>Diseñado para todas las etapas educativas</li>
                         <li>Navegación e intefaz intuitiva</li>
