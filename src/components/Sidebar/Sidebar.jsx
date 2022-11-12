@@ -13,9 +13,12 @@ import useWindowDimensions from "../../hooks/WindowDimensions";
 import FloatingButton from '../FloatingButton';
 import { Link } from 'react-router-dom';
 
+import { auth } from '../../services/firebase';
+
 const Sidebar = ({ breakpoint, ...props }) => {
     const { width: windowWidth } = useWindowDimensions();
     const [isOpen, setOpenStatus] = useState(false);
+    const [user, setUser] = useState(auth.currentUser);
 
     let classes = 'sidebar sidebar-desktop';
     if (windowWidth <= breakpoint) {
@@ -41,11 +44,15 @@ const Sidebar = ({ breakpoint, ...props }) => {
         />
         : null;
 
+    useEffect(() => {
+        setUser(auth.currentUser);
+    }, [auth.currentUser]);
+
     return <>
         <div className={classes} {...props}>
             <div className="header">
                 <UserDisplay
-                    username="Juan Perez"
+                    username={user ? user.displayName : 'Anon'}
                     role="Estudiante"
                 />
             </div>

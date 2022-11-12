@@ -5,24 +5,9 @@ import cuest from './imagenes/cuestionario.png';
 import ardilla from './imagenes/ardilla.png';
 import logo from './imagenes/Logo_positivo-06.png';
 
-import db from '../../services/database';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 
 const Home = () => {
-
-    const crearTarea = async (e) => {
-        e.preventDefault();
-        try {
-            await addDoc(collection(db, 'tareas'), {
-                titulo: 'test',
-                done: false,
-                created: Timestamp.now()
-            })
-        } catch (err) {
-            alert(err);
-        }
-    };
-
     return (
         <div className='home'>
             <div className='inicio'>
@@ -61,9 +46,6 @@ const Home = () => {
                     </ul>
                     <img src={logo} alt="" />
                 </div>
-                <button onClick={crearTarea}>
-                    Crear
-                </button>
             </div>
         </div>
     );
