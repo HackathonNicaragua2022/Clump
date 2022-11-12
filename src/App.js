@@ -1,14 +1,18 @@
 import { useState, useEffect } from 'react';
+
 import "./App.css";
-//importacion de componentes
-import Login from "./components/Login";
+
 import Grid from './components/Grid';
 import Home from './components/HomePage';
 import Sidebar from './components/Sidebar';
+import useWindowDimensions from './hooks/WindowDimensions';
 
 function App() {
 
   const [items, setItems] = useState([]);
+  const { width: windowWidth } = useWindowDimensions();
+
+  const MidBreakpoint = 1000;
 
   const ImageWidth = 350;
   const ImageHeight = 230;
@@ -50,17 +54,18 @@ function App() {
     })();
   }, []);
 
+  const gridStyle = {
+    height: '100vh',
+    width: (windowWidth > MidBreakpoint) ? '75%' : '100%',
+    overflow: 'auto'
+  };
+
   return (
     <div className="App">
       <Home />
-      <Login />
-      <Sidebar />
+      <Sidebar breakpoint={MidBreakpoint} />
       <Grid
-        style={{
-          height: '100vh',
-          width: '75%',
-          overflow: 'auto'
-        }}
+        style={gridStyle}
         items={items}
       />
     </div>

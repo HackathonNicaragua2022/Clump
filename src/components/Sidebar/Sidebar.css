@@ -1,3 +1,23 @@
+.sidebar-close {
+    left: -100%;
+}
+
+.sidebar-open {
+    left: 0;
+}
+
+.sidebar-mobile {
+    transition: left 1s;
+    position: absolute;
+    min-width: 100%;
+}
+
+.sidebar-desktop {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 0 25px 25px 0;
+}
+
 .sidebar {
     background-color: var(--clump-primary-2);
     color: var(--clump-on-primary);
@@ -37,7 +57,7 @@
 
 .sidebar li:hover {
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.192)
+    background-color: var(--clump-primary-1);
 }
 
 .sidebar .icon {
