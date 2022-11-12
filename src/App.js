@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react';
 
 import "./App.css";
 
-import Grid from './components/Grid';
 import Home from './components/HomePage';
-import Sidebar from './components/Sidebar';
 import useWindowDimensions from './hooks/WindowDimensions';
+import Navbar from './components/Navbar';
 
 function App() {
 
@@ -62,12 +61,8 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <Home />
-      <Sidebar breakpoint={MidBreakpoint} />
-      <Grid
-        style={gridStyle}
-        items={items}
-      />
     </div>
   );
 }

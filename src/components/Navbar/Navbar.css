@@ -1,0 +1,43 @@
+nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clump-1-3);
+    color: var(--clump-on-primary);
+}
+
+nav .logo {
+    width: 10%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+nav .logo img {
+    width: 115px;
+    height: 115px;
+}
+
+nav .branding {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+nav .branding .brand-name {
+    font-size: 70px;
+}
+
+nav ul {
+    width: 60%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    list-style: none;
+}
+
+nav ul li {
+    cursor: pointer;
+    font-size: 35px;
+}
