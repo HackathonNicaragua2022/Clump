@@ -5,6 +5,15 @@ import "./App.css";
 import Home from './components/HomePage';
 import useWindowDimensions from './hooks/WindowDimensions';
 import Navbar from './components/Navbar';
+import Login from './components/Login';
+import Registro from './components/Registro';
+import Sidebar from './components/Sidebar';
+import Grid from './components/Grid';
+
+import {
+  Routes,
+  Route
+} from 'react-router-dom';
 
 function App() {
 
@@ -61,8 +70,26 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
-      <Home />
+      <Routes>
+        <Route path='/' element={<><Navbar/><Home/></>}></Route>
+        <Route path='/login' element={<Login/>}></Route>
+        <Route path='/register' element={<Registro/>}></Route>
+        <Route path='/courses' element={<div style={{
+          display: 'flex', 
+          flex: 'row wrap', 
+          alignItems: 'center',
+          height: '100%'
+        }}>
+          <Sidebar breakpoint={MidBreakpoint}/>
+          <Grid
+            items={items}
+            style={{
+              height: '100%',
+              overflow: 'auto'
+            }}
+          />
+        </div>}></Route>
+      </Routes>
     </div>
   );
 }

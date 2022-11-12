@@ -13,7 +13,7 @@ const Home = () => {
                 <div>
                     <h2>¡SEA BIENVENIDO!</h2>
                     <p>A Class Clump, platoforma de aprendizaje dinamica y de uso facil con Realidad aumentada</p>
-                    <a href='/' className='ir-inicio'>Inicio</a>
+                    <a href='/courses' className='ir-inicio'>Cursos</a>
                 </div>
             </div>
             <div className='func'>

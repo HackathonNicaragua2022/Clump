@@ -41,3 +41,8 @@ nav ul li {
     cursor: pointer;
     font-size: 35px;
 }
+
+nav ul a {
+    color: white;
+    text-decoration: none;
+}

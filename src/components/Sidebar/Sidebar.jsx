@@ -44,7 +44,7 @@ const Sidebar = ({ breakpoint, ...props }) => {
         <div className={classes} {...props}>
             <div className="header">
                 <UserDisplay 
-                    username="Gallo claudio"
+                    username="Juan Perez"
                     role="Estudiante"
                 />
             </div>
