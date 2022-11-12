@@ -1,0 +1,126 @@
+.home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2785F0;
+    font-family: 'Montserrat';
+}
+
+.inicio {
+    width: 90%;
+    height: 100%;
+    margin: 5% 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 45px;
+}
+
+.func {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2785F0;
+}
+
+.desc {
+    display: flex;
+    flex-direction: row;
+}
+
+.inicio h2 {
+    font-size: 2.5rem;
+    margin: 0 0 2.5rem 0;
+}
+
+.inicio div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inicio p {
+    font-size: 25px;
+    padding-bottom: 30px;
+}
+
+.inicio a {
+    padding: 3px 30px;
+    color: #2785F0;
+    text-decoration: none;
+    border: 4px solid #2785F0;
+    border-radius: 45px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 40px;
+}
+
+.inicio a:hover {
+    background-color: #2785F0;
+    color: #fff;
+}
+
+/*funciones*/
+.func {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.desc {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.card-desc {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.func img {
+    width: 60%;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-bottom: 25px;
+}
+
+/*uso*/
+.uso {
+    color: #fff;
+}
+
+.uso-list {
+    width: 100%;
+    padding-left: 10%;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.uso img {
+    height: 100%;
+}
+
+
+li {
+    font-size: 25px;
+    padding: 40px;
+}

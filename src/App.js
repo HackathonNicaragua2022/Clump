@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import "./App.css";
 import Login from "./components/Login";
 import Grid from './components/Grid';
+import Home from './components/HomePage';
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
 
   return (
     <div className="App">
+      <Home />
       <Login />
       <Grid
         items={items}
