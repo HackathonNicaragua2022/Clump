@@ -1,0 +1,42 @@
+.user-display {
+    border-radius: 5px;
+    display: flex;
+    flex-flow: row no-wrap;
+    justify-content: space-around;
+    overflow: hidden;
+    min-width: 250px;
+}
+
+.user-display .profile-picture {
+    background-color: var(--clump-on-primary);
+    width: 85px;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.user-display .profile-picture p {
+    color: var(--clump-primary-2);
+    align-self: center;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.user-display .user-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+.user-display .user-data .username {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.user-display .user-data .role {
+    text-align: center;
+    font-size: 15px;
+}

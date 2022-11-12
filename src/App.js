@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import "./App.css";
+//importacion de componentes
 import Login from "./components/Login";
 import Grid from './components/Grid';
 import Home from './components/HomePage';
+import Sidebar from './components/Sidebar';
 
 function App() {
 
@@ -52,7 +54,13 @@ function App() {
     <div className="App">
       <Home />
       <Login />
+      <Sidebar />
       <Grid
+        style={{
+          height: '100vh',
+          width: '75%',
+          overflow: 'auto'
+        }}
         items={items}
       />
     </div>
