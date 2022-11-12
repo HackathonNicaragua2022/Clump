@@ -1,13 +1,15 @@
 .pendientes-all{
     text-align: center;
 }
+
 .pendientes-contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
     width: 450px;
     height: 70px;
     margin: 0px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 1px 3px 0px rgb(0, 0, 0);   
     margin-bottom: 40px;
@@ -38,20 +40,23 @@
     text-align: center;
     width:50px;
     height: 5px;*/
-    margin-left: 50px;
+    /* margin-left: 50px;
     text-decoration: none;
     display:inline-block;
     width:50px;
     padding:20px;
     border: 3px black;
-    border-radius:50px;
-    text-decoration: none;
-    color:rgb(255, 255, 255);
-    background-color: #2785F0;
     font-weight: bold;
     transition: all 0.3s;
+    font-size: 18px; */
+    background-color: #2785F0;
+    color:rgb(255, 255, 255);
     text-align: center;
-    font-size: 18px;
+    text-decoration: none;
+    border-radius:100%;
+    padding: 15px;
+    margin-left: 25px;
+
 }
 .btn-ver:hover{
     border: 3px black;

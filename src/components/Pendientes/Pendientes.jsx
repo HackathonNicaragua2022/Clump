@@ -8,7 +8,24 @@ const Pendientes = (props) => {
                     <p>Tarea    {props.materia}    {props.fecha}</p>
                 </div>
                 <a href="#" className='btn-ver'>ver</a>
-
+            </div>
+            <div className='pendientes-contenedor'>
+                <div className='materia'> 
+                    <p>Tarea    {props.materia}    {props.fecha}</p>
+                </div>
+                <a href="#" className='btn-ver'>ver</a>
+            </div>
+            <div className='pendientes-contenedor'>
+                <div className='materia'> 
+                    <p>Tarea    {props.materia}    {props.fecha}</p>
+                </div>
+                <a href="#" className='btn-ver'>ver</a>
+            </div>
+            <div className='pendientes-contenedor'>
+                <div className='materia'> 
+                    <p>Tarea    {props.materia}    {props.fecha}</p>
+                </div>
+                <a href="#" className='btn-ver'>ver</a>
             </div>
         </div>
     );

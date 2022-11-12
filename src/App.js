@@ -79,6 +79,7 @@ function App() {
           display: 'flex',
           flex: 'row wrap',
           alignItems: 'center',
+          justifyContent: 'center',
           height: '100%'
         }}>
           <Sidebar breakpoint={MidBreakpoint} />
@@ -98,7 +99,15 @@ function App() {
             height: '100%'
           }}>
             <Sidebar breakpoint={MidBreakpoint} />
-            <Pendientes />
+            <div style={{
+              display: 'flex',
+              height: '100%',
+              width: '75%',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <Pendientes />
+            </div>
           </div>
         }>
         </Route>
