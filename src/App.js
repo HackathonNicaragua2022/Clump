@@ -11,6 +11,8 @@ import Sidebar from './components/Sidebar';
 import Grid from './components/Grid';
 import Pendientes from './components/Pendientes';
 
+import db from './services/database';
+
 import {
   Routes,
   Route
