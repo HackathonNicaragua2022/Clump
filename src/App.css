@@ -1,8 +1,10 @@
 .App {
-    display: flex;
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
 }
 
 .container {
-    height: 100%;
-    overflow: scroll;
+  height: 100%;
+  overflow: scroll;
 }

@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
 import "./App.css";
 //importacion de componentes
+import Login from "./components/Login";
 import Grid from './components/Grid';
 import Sidebar from './components/Sidebar';
 
 function App() {
 
   const [items, setItems] = useState([]);
-  
+
   const ImageWidth = 350;
   const ImageHeight = 230;
   const RandomImageAPI = `https://picsum.photos/`;
 
   useEffect(() => {
-    
+
     const titulos = [
       "Matematicas I",
       "Algebra I",
@@ -26,7 +27,7 @@ function App() {
       "Algoritmizacion y estructuras de datos",
       "Ingenieria de software"
     ];
-    
+
     (async () => {
       const newItems = [];
       for (let i = 0; i < 10; i++) {
