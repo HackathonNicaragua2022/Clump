@@ -9,6 +9,7 @@ import Login from './components/Login';
 import Registro from './components/Registro';
 import Sidebar from './components/Sidebar';
 import Grid from './components/Grid';
+import Pendientes from './components/Pendientes';
 
 import {
   Routes,
@@ -71,16 +72,16 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<><Navbar/><Home/></>}></Route>
-        <Route path='/login' element={<Login/>}></Route>
-        <Route path='/register' element={<Registro/>}></Route>
+        <Route path='/' element={<><Navbar /><Home /></>}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/register' element={<Registro />}></Route>
         <Route path='/courses' element={<div style={{
-          display: 'flex', 
-          flex: 'row wrap', 
+          display: 'flex',
+          flex: 'row wrap',
           alignItems: 'center',
           height: '100%'
         }}>
-          <Sidebar breakpoint={MidBreakpoint}/>
+          <Sidebar breakpoint={MidBreakpoint} />
           <Grid
             items={items}
             style={{
@@ -89,8 +90,20 @@ function App() {
             }}
           />
         </div>}></Route>
+        <Route path='/pendientes' element={
+          <div style={{
+            display: 'flex',
+            flex: 'row wrap',
+            alignItems: 'center',
+            height: '100%'
+          }}>
+            <Sidebar breakpoint={MidBreakpoint} />
+            <Pendientes />
+          </div>
+        }>
+        </Route>
       </Routes>
-    </div>
+    </div >
   );
 }
 

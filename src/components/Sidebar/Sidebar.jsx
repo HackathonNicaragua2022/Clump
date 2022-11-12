@@ -11,6 +11,7 @@ import LogoutIcon from './logout.png';
 import "./Sidebar.css";
 import useWindowDimensions from "../../hooks/WindowDimensions";
 import FloatingButton from '../FloatingButton';
+import { Link } from 'react-router-dom';
 
 const Sidebar = ({ breakpoint, ...props }) => {
     const { width: windowWidth } = useWindowDimensions();
@@ -25,9 +26,9 @@ const Sidebar = ({ breakpoint, ...props }) => {
             classes += ' sidebar-close';
         }
     }
-    
+
     const sidebarButton = (windowWidth <= breakpoint)
-    ? <FloatingButton
+        ? <FloatingButton
             text={'^'}
             clickedText={'X'}
             pos={{
@@ -38,26 +39,30 @@ const Sidebar = ({ breakpoint, ...props }) => {
                 setOpenStatus(!isOpen);
             }}
         />
-    : null;
+        : null;
 
     return <>
         <div className={classes} {...props}>
             <div className="header">
-                <UserDisplay 
+                <UserDisplay
                     username="Juan Perez"
                     role="Estudiante"
                 />
             </div>
             <div className="navigation">
                 <ul>
-                    <li>
-                        <img src={HomeIcon} className="icon" />
-                        <p className="title">Inicio</p>
-                    </li>
-                    <li>
-                        <img src={PendingTaskIcon} className="icon" />
-                        <p className="title">Ver pendientes</p>
-                    </li>
+                    <Link to="/courses">
+                        <li>
+                            <img src={HomeIcon} className="icon" />
+                            <p className="title">Inicio</p>
+                        </li>
+                    </Link>
+                    <Link to="/pendientes">
+                        <li>
+                            <img src={PendingTaskIcon} className="icon" />
+                            <p className="title">Ver pendientes</p>
+                        </li>
+                    </Link>
                     <li>
                         <img src={CalendarIcon} className="icon" />
                         <p className="title">Calendario</p>
