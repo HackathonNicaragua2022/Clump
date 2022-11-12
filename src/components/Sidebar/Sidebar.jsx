@@ -10,48 +10,79 @@ import LogoutIcon from './logout.png';
 
 import "./Sidebar.css";
 import useWindowDimensions from "../../hooks/WindowDimensions";
+import FloatingButton from '../FloatingButton';
 
-const Sidebar = ({ paths, breakpoint, ...props }) => {
-    return <div className="sidebar" {...props}>
-        <div className="header">
-            <UserDisplay 
-                username="Gallo claudio"
-                role="Estudiante"
-            />
+const Sidebar = ({ breakpoint, ...props }) => {
+    const { width: windowWidth } = useWindowDimensions();
+    const [isOpen, setOpenStatus] = useState(false);
+
+    let classes = 'sidebar sidebar-desktop';
+    if (windowWidth <= breakpoint) {
+        classes = 'sidebar sidebar-mobile';
+        if (isOpen) {
+            classes += ' sidebar-open';
+        } else {
+            classes += ' sidebar-close';
+        }
+    }
+    
+    const sidebarButton = (windowWidth <= breakpoint)
+    ? <FloatingButton
+            text={'^'}
+            clickedText={'X'}
+            pos={{
+                right: '5%',
+                bottom: '5%'
+            }}
+            onClick={() => {
+                setOpenStatus(!isOpen);
+            }}
+        />
+    : null;
+
+    return <>
+        <div className={classes} {...props}>
+            <div className="header">
+                <UserDisplay 
+                    username="Gallo claudio"
+                    role="Estudiante"
+                />
+            </div>
+            <div className="navigation">
+                <ul>
+                    <li>
+                        <img src={HomeIcon} className="icon" />
+                        <p className="title">Inicio</p>
+                    </li>
+                    <li>
+                        <img src={PendingTaskIcon} className="icon" />
+                        <p className="title">Ver pendientes</p>
+                    </li>
+                    <li>
+                        <img src={CalendarIcon} className="icon" />
+                        <p className="title">Calendario</p>
+                    </li>
+                    <li>
+                        <img src={VideoIcon} className="icon" />
+                        <p className="title">Videollamada AR</p>
+                    </li>
+                    <li>
+                        <img src={UserIcon} className="icon" />
+                        <p className="title">Informacion Personal</p>
+                    </li>
+                </ul>
+            </div>
+            <div className="settings">
+                <ul>
+                    <li>
+                        <img src={LogoutIcon} className="icon" />
+                        <p className="title">Cerrar Sesión</p>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div className="navigation">
-            <ul>
-                <li>
-                    <img src={HomeIcon} className="icon" />
-                    <p className="title">Inicio</p>
-                </li>
-                <li>
-                    <img src={PendingTaskIcon} className="icon" />
-                    <p className="title">Ver pendientes</p>
-                </li>
-                <li>
-                    <img src={CalendarIcon} className="icon" />
-                    <p className="title">Calendario</p>
-                </li>
-                <li>
-                    <img src={VideoIcon} className="icon" />
-                    <p className="title">Videollamada AR</p>
-                </li>
-                <li>
-                    <img src={UserIcon} className="icon" />
-                    <p className="title">Informacion Personal</p>
-                </li>
-            </ul>
-        </div>
-        <div className="settings">
-            <ul>
-                <li>
-                    <img src={LogoutIcon} className="icon" />
-                    <p className="title">Cerrar Sesión</p>
-                </li>
-            </ul>
-        </div>
-    </div>;
+        {sidebarButton}
+    </>;
 };
 
 export default Sidebar;
