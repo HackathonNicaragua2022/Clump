@@ -1,13 +1,19 @@
 import { useState, useEffect } from 'react';
+
 import "./App.css";
-//importacion de componentes
-import Login from "./components/Login";
+
 import Grid from './components/Grid';
 import Sidebar from './components/Sidebar';
+import useWindowDimensions from './hooks/WindowDimensions';
+import FloatingButton from './components/FloatingButton';
 
 function App() {
 
   const [items, setItems] = useState([]);
+  const { width: windowWidth, height: windowHeight  } = useWindowDimensions();
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const MidBreakpoint = 1000;
 
   const ImageWidth = 350;
   const ImageHeight = 230;
@@ -49,17 +55,44 @@ function App() {
     })();
   }, []);
 
+  const gridStyle = {
+    height: '100vh',
+    width: windowWidth > MidBreakpoint ? '75%' : '100%',
+    overflow: 'auto'
+  };
+
+  let sidebarClass = 'sidebar sidebar-desktop';
+  if (windowWidth <= MidBreakpoint) {
+    sidebarClass = 'sidebar sidebar-mobile';
+    if (isSidebarOpen) {
+      sidebarClass += ' sidebar-open';
+    } else {
+      sidebarClass += ' sidebar-close';
+    }
+  }
+
+  const sidebarButton = (windowWidth <= MidBreakpoint)
+    ? <FloatingButton
+        text={'^'}
+        clickedText={'X'}
+        pos={{
+          right: '5%',
+          bottom: '5%'
+        }}
+        onClick={() => {
+          setSidebarOpen(!isSidebarOpen);
+        }}
+      />
+    : null;
+
   return (
     <div className="App">
-      <Sidebar />
+      <Sidebar className={sidebarClass} />
       <Grid
-        style={{
-          height: '100vh',
-          width: '75%',
-          overflow: 'auto'
-        }}
+        style={gridStyle}
         items={items}
       />
+      {sidebarButton}
     </div>
   );
 }

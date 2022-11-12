@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import UserDisplay from "../UserDisplay";
 import HomeIcon from './home.png';
 import PendingTaskIcon from './presentacion.png';
@@ -7,9 +9,10 @@ import UserIcon from './alumno.png';
 import LogoutIcon from './logout.png';
 
 import "./Sidebar.css";
+import useWindowDimensions from "../../hooks/WindowDimensions";
 
-const Sidebar = ({ paths }) => {
-    return <div className="sidebar">
+const Sidebar = ({ paths, breakpoint, ...props }) => {
+    return <div className="sidebar" {...props}>
         <div className="header">
             <UserDisplay 
                 username="Gallo claudio"
