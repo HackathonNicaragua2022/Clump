@@ -5,9 +5,20 @@ import cuest from './imagenes/cuestionario.png';
 import ardilla from './imagenes/ardilla.png';
 import logo from './imagenes/Logo_positivo-06.png';
 
-import { collection, addDoc, Timestamp } from 'firebase/firestore';
+import { auth } from '../../services/firebase';
+import { useNavigate } from 'react-router';
+import { useEffect } from 'react';
 
 const Home = () => {
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (auth.currentUser !== null) {
+            navigate('/dashboard');
+        }
+    }, []);
+
     return (
         <div className='home'>
             <div className='inicio'>
@@ -15,7 +26,7 @@ const Home = () => {
                 <div>
                     <h2>¡SEA BIENVENIDO!</h2>
                     <p>A Class Clump, platoforma de aprendizaje dinamica y de uso facil con Realidad aumentada</p>
-                    <a href='/courses' className='ir-inicio'>Cursos</a>
+                    <a href='/dashboard' className='ir-inicio'>Cursos</a>
                 </div>
             </div>
             <div className='func'>

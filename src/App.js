@@ -63,19 +63,13 @@ function App() {
     })();
   }, []);
 
-  const gridStyle = {
-    height: '100vh',
-    width: (windowWidth > MidBreakpoint) ? '75%' : '100%',
-    overflow: 'auto'
-  };
-
   return (
     <div className="App">
       <Routes>
         <Route path='/' element={<><Navbar /><Home /></>}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Registro />}></Route>
-        <Route path='/courses' element={<div style={{
+        <Route path='/dashboard' element={<div style={{
           display: 'flex',
           flex: 'row wrap',
           alignItems: 'center',

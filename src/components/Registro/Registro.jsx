@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { crearUsuario } from '../../model/usuarios';
 import { useNavigate } from 'react-router';
 import { updateProfile } from 'firebase/auth';
@@ -18,15 +18,15 @@ const Register = () => {
         await updateProfile(user, {
             displayName: nameInput.current.value
         });
-        nav('/courses');
+        nav('/dashboard');
     };
 
     return (
         <div className="login">
             <h1>CLASS CLUMP</h1>
             <form action="#">
-                <input type="email" placeholder="Correo electronico" ref={emailInput}/>
-                <input type="password" placeholder="Contraseña" ref={passwordInput}/>
+                <input type="email" placeholder="Correo electronico" ref={emailInput} />
+                <input type="password" placeholder="Contraseña" ref={passwordInput} />
                 <input type="text" placeholder="Usuario" ref={nameInput} />
                 <input type="text" placeholder="Numero telefónico" />
                 <input type="password" placeholder="Confirmar Contraseña" />
