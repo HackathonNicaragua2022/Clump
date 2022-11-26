@@ -58,6 +58,26 @@ const Home = () => {
                     <img src={logo} alt="" />
                 </div>
             </div>
+            
+            <footer>
+                <h2>CLASS CLUMP</h2>
+                <div className='footer-content'>
+                    <div className='Servicios'>
+                            <h3>Servicios</h3>
+                            <p>
+                                +505 87712964
+                            </p>
+                            <p className='correo'>
+                                classclump@gmail.com
+                            </p>
+                        </div>
+                        <h3 className='sugerencia-text'>sugerencias</h3>
+                        <div className='sugerencias'>
+                            <input type="text"  name="sugerencia"/>
+                            <button>Enviar</button>
+                    </div>
+                </div>
+            </footer>
         </div>
     );
 }

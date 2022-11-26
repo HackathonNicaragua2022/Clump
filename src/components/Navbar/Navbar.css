@@ -1,7 +1,6 @@
 nav {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
     align-items: center;
     background-color: var(--clump-1-3);
     color: var(--clump-on-primary);
@@ -14,7 +13,7 @@ nav .logo {
     justify-content: center;
 }
 
-nav .logo img {
+nav .logo .img-logo {
     width: 115px;
     height: 115px;
 }
@@ -25,11 +24,11 @@ nav .branding {
     justify-content: center;
 }
 
-nav .branding .brand-name {
-    font-size: 70px;
+nav p {
+    font-size: 50px;
 }
 
-nav ul {
+.classul {
     width: 60%;
     display: flex;
     flex-flow: row wrap;
@@ -37,12 +36,33 @@ nav ul {
     list-style: none;
 }
 
-nav ul li {
+nav .classul li {
     cursor: pointer;
     font-size: 35px;
 }
 
-nav ul a {
+nav .classul a {
     color: white;
     text-decoration: none;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-active {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    display: block;
+    float: left;
+    justify-content: start;
+    align-items: start;
+}
+
+.classul-close {
+    display: none;
 }
