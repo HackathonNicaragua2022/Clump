@@ -10,6 +10,7 @@ import Registro from './components/Registro';
 import Sidebar from './components/Sidebar';
 import Grid from './components/Grid';
 import Pendientes from './components/Pendientes';
+import Calendario from './components/Calendario';
 
 import {
   Routes,
@@ -91,6 +92,29 @@ function App() {
             }}
           />
         </div>}></Route>
+
+
+        <Route path='/calendario' element={<div style={{
+          display: 'flex',
+          flex: 'row wrap',
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: '100%'
+        }}>
+
+          <Sidebar breakpoint={MidBreakpoint} />
+          <div style={{
+            display: 'flex',
+            height: '100%',
+            width: '75%',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+            <Calendario />
+          </div>
+        </div>}></Route>
+
+
         <Route path='/pendientes' element={
           <div style={{
             display: 'flex',

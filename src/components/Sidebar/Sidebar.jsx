@@ -70,10 +70,12 @@ const Sidebar = ({ breakpoint, ...props }) => {
                             <p className="title">Ver pendientes</p>
                         </li>
                     </Link>
-                    <li>
-                        <img src={CalendarIcon} className="icon" />
-                        <p className="title">Calendario</p>
-                    </li>
+                    <Link to="/calendario">
+                        <li>
+                            <img src={CalendarIcon} className="icon" />
+                            <p className="title">Calendario</p>
+                        </li>
+                    </Link>
                     <li>
                         <img src={VideoIcon} className="icon" />
                         <p className="title">Videollamada AR</p>
