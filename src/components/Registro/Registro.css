@@ -28,7 +28,8 @@ form {
     color: #183FD9;
 }
 
-input {
+input,
+select {
     width: 40%;
     background: #EBEBEB;
     border: none;
