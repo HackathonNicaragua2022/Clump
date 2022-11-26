@@ -6,3 +6,12 @@
   height: 100%;
   overflow: scroll;
 }
+
+.alerts {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-end;
+}

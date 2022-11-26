@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 import { auth } from '../../services/firebase';
 
 const Sidebar = ({ breakpoint, ...props }) => {
-    const { width: windowWidth } = useWindowDimensions();
+    const { windowWidth: windowWidth } = useWindowDimensions();
     const [isOpen, setOpenStatus] = useState(false);
     const [user, setUser] = useState(auth.currentUser);
 
@@ -58,15 +58,15 @@ const Sidebar = ({ breakpoint, ...props }) => {
             </div>
             <div className="navigation">
                 <ul>
-                    <Link to="/courses">
+                    <Link to="/dashboard">
                         <li>
-                            <img src={HomeIcon} className="icon" />
+                            <img src={HomeIcon} className="icon" alt="home" />
                             <p className="title">Inicio</p>
                         </li>
                     </Link>
                     <Link to="/pendientes">
                         <li>
-                            <img src={PendingTaskIcon} className="icon" />
+                            <img src={PendingTaskIcon} className="icon" alt="tasks" />
                             <p className="title">Ver pendientes</p>
                         </li>
                     </Link>
@@ -77,11 +77,15 @@ const Sidebar = ({ breakpoint, ...props }) => {
                         </li>
                     </Link>
                     <li>
-                        <img src={VideoIcon} className="icon" />
+                        <img src={CalendarIcon} className="icon" alt="calendar" />
+                        <p className="title">Calendario</p>
+                    </li>
+                    <li>
+                        <img src={VideoIcon} className="icon" alt="video" />
                         <p className="title">Videollamada AR</p>
                     </li>
                     <li>
-                        <img src={UserIcon} className="icon" />
+                        <img src={UserIcon} className="icon" alt="user" />
                         <p className="title">Informacion Personal</p>
                     </li>
                 </ul>
@@ -89,7 +93,7 @@ const Sidebar = ({ breakpoint, ...props }) => {
             <div className="settings">
                 <ul>
                     <li>
-                        <img src={LogoutIcon} className="icon" />
+                        <img src={LogoutIcon} className="icon" alt="logout" />
                         <p className="title">Cerrar Sesión</p>
                     </li>
                 </ul>

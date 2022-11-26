@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import "./App.css";
 
 import Home from './components/HomePage';
-import useWindowDimensions from './hooks/WindowDimensions';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Registro from './components/Registro';
@@ -17,10 +16,13 @@ import {
   Route
 } from 'react-router-dom';
 
+import { useSelector } from 'react-redux';
+
 function App() {
 
   const [items, setItems] = useState([]);
-  const { width: windowWidth } = useWindowDimensions();
+
+  const toasts = useSelector(state => state.toast.value);
 
   const MidBreakpoint = 1000;
 
@@ -64,19 +66,14 @@ function App() {
     })();
   }, []);
 
-  const gridStyle = {
-    height: '100vh',
-    width: (windowWidth > MidBreakpoint) ? '75%' : '100%',
-    overflow: 'auto'
-  };
-
   return (
     <div className="App">
+      <div className="alerts">{toasts}</div>
       <Routes>
         <Route path='/' element={<><Navbar /><Home /></>}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Registro />}></Route>
-        <Route path='/courses' element={<div style={{
+        <Route path='/dashboard' element={<div style={{
           display: 'flex',
           flex: 'row wrap',
           alignItems: 'center',
