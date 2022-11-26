@@ -77,10 +77,6 @@ const Sidebar = ({ breakpoint, ...props }) => {
                         </li>
                     </Link>
                     <li>
-                        <img src={CalendarIcon} className="icon" alt="calendar" />
-                        <p className="title">Calendario</p>
-                    </li>
-                    <li>
                         <img src={VideoIcon} className="icon" alt="video" />
                         <p className="title">Videollamada AR</p>
                     </li>
