@@ -17,6 +17,7 @@ const Register = () => {
     const [username, setUsername] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [isStudent, setIsStudent] = useState(true);
 
     const validate = () => {
         const messages = [];
@@ -89,7 +90,7 @@ const Register = () => {
             await updateProfile(user, { displayName: username });
             await addDoc(collection(db, 'users'), {
                 userId: user.uid,
-                isStudent: true,
+                isStudent,
                 phoneNumber
             });
             dispatch(pushToast({
@@ -116,6 +117,10 @@ const Register = () => {
                 <input type="password" placeholder="Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <input type="password" placeholder="Confirmar Contraseña" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                 <input type="text" placeholder="Numero telefónico" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+                <select name="role" id="role" onChange={(e) => setIsStudent(e.target.value === "true" ? true : false)}>
+                    <option value="true">Estudiante</option>
+                    <option value="false">Maestro</option>
+                </select>
                 <button type="submit" className="sublog" onClick={onCreateUser}>Registrarse</button>
             </form>
         </div>
