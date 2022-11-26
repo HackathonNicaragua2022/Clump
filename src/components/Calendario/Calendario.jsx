@@ -28,13 +28,22 @@ const Calendario = (props) => {
     const localizer = momentLocalizer(moment)
     return (
         <div className='calendario'>
-            <form>
-                <label htmlFor="title">Descripcion:</label>
-                <input type="text" placeholder="Descripción" name='title' />
-                <label htmlFor="start">Fecha de inicio:</label>
-                <input type="date" name='start' />
-                <label htmlFor="end">Fecha de fin:</label>
-                <input type="date" name='end' />
+            <h4>Agregar Pendiente</h4>
+            <form className='agregar_p'>
+                <div className='Input-cal'>
+                    <label htmlFor="title">Descripcion:</label>
+                    <input type="text" placeholder="Descripción" name='title' />
+                </div>
+                <div className='Input-fech'>
+                    <div className='Input-cal'>
+                        <label htmlFor="start">Fecha de inicio:</label>
+                        <input type="date" name='start' />
+                    </div>
+                    <div className='Input-cal'>
+                        <label htmlFor="end">Fecha de fin:</label>
+                        <input type="date" name='end' />
+                    </div>
+                </div>
                 <button type="submit">Agregar</button>
             </form>
             <Calendar

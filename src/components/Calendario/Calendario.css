@@ -1,14 +1,45 @@
 .calendario {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
     height: 100vh;
     width: 100%;
     overflow-y: scroll;
 }
 
-.calendario>form {
+.calendario h4 {
+    margin: 30px;
+}
+
+.agregar_p {
+    padding-top: 10px;
+    margin: 0;
+    flex-flow: column nowrap;
+    justify-content: start;
+
+}
+
+.Input-cal {
     display: flex;
-    width: 100%;
-    padding: 30px;
-    flex-direction: row;
+    flex-flow: column nowrap;
     align-items: center;
-    justify-content: center;
+
+    width: 90%;
+}
+
+.Input-cal>input {
+    width: 90%;
+    padding: 5px;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.Input-fech {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+}
+
+.calendario Calendar {
+    justify-self: start;
 }
