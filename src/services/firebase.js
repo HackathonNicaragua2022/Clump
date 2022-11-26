@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from 'firebase/firestore';
+import { where, getFirestore, query, collection, getDocs } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -16,3 +16,25 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 export const auth = getAuth(app);
 export default db;
+
+export const getUserData = async (user) => {
+  const uid = user.uid;
+  const q = query(collection(db, "users"), where("userId", "==", uid.toString()));
+  const result = await getDocs(q);
+  
+  const first = result.docs.at(0);
+  if (!first) {
+    return null;
+  }
+
+  const data = first.data()
+
+  if (data) {
+    return {
+      displayName: user.displayName,
+      ...data
+    };
+  } else {
+    return null;
+  }
+};

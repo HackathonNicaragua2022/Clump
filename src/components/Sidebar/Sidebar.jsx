@@ -13,12 +13,17 @@ import useWindowDimensions from "../../hooks/WindowDimensions";
 import FloatingButton from '../FloatingButton';
 import { Link } from 'react-router-dom';
 
-import { auth } from '../../services/firebase';
+import { auth, getUserData } from '../../services/firebase';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { pushToast } from '../../store/Toast';
 
 const Sidebar = ({ breakpoint, ...props }) => {
-    const { windowWidth: windowWidth } = useWindowDimensions();
+    const { windowWidth } = useWindowDimensions();
     const [isOpen, setOpenStatus] = useState(false);
     const [user, setUser] = useState(auth.currentUser);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     let classes = 'sidebar sidebar-desktop';
     if (windowWidth <= breakpoint) {
@@ -45,7 +50,21 @@ const Sidebar = ({ breakpoint, ...props }) => {
         : null;
 
     useEffect(() => {
-        setUser(auth.currentUser);
+        (async () => {
+            if (auth.currentUser === null) {
+                pushToast({
+                    title: "Atencion",
+                    description: "Inicia sesion primero",
+                    isAlert: false
+                });
+                navigate('/');
+                return;
+            }
+
+            const userData = await getUserData(auth.currentUser);
+            setUser(userData);
+            console.log(userData);
+        })();
     }, [auth.currentUser]);
 
     return <>
@@ -53,7 +72,11 @@ const Sidebar = ({ breakpoint, ...props }) => {
             <div className="header">
                 <UserDisplay
                     username={user ? user.displayName : 'Anon'}
-                    role="Estudiante"
+                    role={
+                        user.isStudent
+                            ? "Estudiante"
+                            : "Maestro"
+                    }
                 />
             </div>
             <div className="navigation">

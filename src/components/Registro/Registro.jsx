@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { updateProfile, createUserWithEmailAndPassword } from 'firebase/auth';
+import { updateProfile, createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
 import db, { auth } from './../../services/firebase';
 import { collection, addDoc } from 'firebase/firestore';
 import { useDispatch } from 'react-redux';
