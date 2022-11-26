@@ -83,46 +83,28 @@ const Register = () => {
             return;
         }
 
-        createUserWithEmailAndPassword(auth, email, password)
-            .then(cred => {
-                const user = cred.user;
-                updateProfile(user, { displayName: username })
-                    .then(() => {
-                        addDoc(collection(db, 'users'), {
-                            userId: user.uid,
-                            isStudent: true,
-                            phoneNumber,
-                        }).then(() => {
-                            dispatch(pushToast({
-                                title: "Creacion de usuario",
-                                description: "Usuario creado con exito",
-                                isAlert: false,
-                            }));
-                            navigate('/dashboard');
-                        })
-                            .catch(err => {
-                                dispatch(pushToast({
-                                    title: 'Creacion de cuenta',
-                                    description: `Error ${err.code}: ${err.message}`,
-                                    isAlert: true
-                                }));
-                            })
-                    })
-                    .catch((err) => {
-                        dispatch(pushToast({
-                            title: "Creacion de usuario",
-                            description: `Error ${err.code}: ${err.message}`,
-                            isAlert: true
-                        }));
-                    });
-            })
-            .catch(err => {
-                dispatch(pushToast({
-                    title: "Creacion de usuario",
-                    description: `Error ${err.code}: ${err.message}`,
-                    isAlert: true
-                }));
+        try {
+            const cred = await createUserWithEmailAndPassword(auth, email, password);
+            const user = cred.user;
+            await updateProfile(user, { displayName: username });
+            await addDoc(collection(db, 'users'), {
+                userId: user.uid,
+                isStudent: true,
+                phoneNumber
             });
+            dispatch(pushToast({
+                title: "Creacion de usuario",
+                description: "Usuario creado con exito",
+                isAlert: false,
+            }));
+            navigate('/dashboard');
+        } catch (error) {
+            dispatch(pushToast({
+                title: 'Creacion de cuenta',
+                description: `Error ${error.code}: ${error.message}`,
+                isAlert: true
+            }));
+        }
     };
 
     return (
