@@ -47,9 +47,15 @@
     justify-content: center;
 }
 
+.inicio img
+{
+    padding: 20px 20px;
+}
+
 .inicio p {
     font-size: 25px;
     padding-bottom: 30px;
+    padding-left: 30px;
 }
 
 .inicio a {
@@ -101,7 +107,10 @@
     background-color: #fff;
     margin-bottom: 25px;
 }
-
+.func h2
+{
+    font-size: 2.5rem;
+}
 /*uso*/
 .usos {
     color: #fff;
@@ -239,13 +248,14 @@ footer h2 {
         width: 100%;
         flex-direction: column;
     }
-
     .usos h2 {
+        display: none;
         text-align: center;
         font-size: 40px;
     }
 
     .uso {
+        display: none;
         flex-direction: column;
         text-align: center;
     }
@@ -253,8 +263,16 @@ footer h2 {
     .uso img {
         display: none;
     }
+    .uso ul
+    {   
+        text-align: center;
+    }
+    .uso ul li 
+    {
+        list-style: none;
+    }
 }
-@media (max-width: 720px)
+@media (max-width: 968px)
 {
     .footer-content
     {
