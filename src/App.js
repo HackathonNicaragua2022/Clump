@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import "./App.css";
 
 import Home from './components/HomePage';
-import useWindowDimensions from './hooks/WindowDimensions';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Registro from './components/Registro';
@@ -16,10 +15,13 @@ import {
   Route
 } from 'react-router-dom';
 
+import { useSelector } from 'react-redux';
+
 function App() {
 
   const [items, setItems] = useState([]);
-  const { width: windowWidth } = useWindowDimensions();
+
+  const toasts = useSelector(state => state.toast.value);
 
   const MidBreakpoint = 1000;
 
@@ -65,6 +67,7 @@ function App() {
 
   return (
     <div className="App">
+      <div className="alerts">{toasts}</div>
       <Routes>
         <Route path='/' element={<><Navbar /><Home /></>}></Route>
         <Route path='/login' element={<Login />}></Route>

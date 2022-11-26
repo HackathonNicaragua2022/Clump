@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 import { auth } from '../../services/firebase';
 
 const Sidebar = ({ breakpoint, ...props }) => {
-    const { width: windowWidth } = useWindowDimensions();
+    const { windowWidth: windowWidth } = useWindowDimensions();
     const [isOpen, setOpenStatus] = useState(false);
     const [user, setUser] = useState(auth.currentUser);
 
