@@ -28,9 +28,6 @@ const Navbar = () => {
         <div className="logo">
             <img src={Logo} className='img-logo' alt='Logo' />
         </div>
-        <button className={classnav} aria-label="Abrir menú" onClick={handleClick}>
-            <i className="fas fa-bars"></i>
-        </button>
         <div className='img-logo'>
             <p className="brand-name">
                 Class Clump
@@ -41,6 +38,9 @@ const Navbar = () => {
             <Link to='/register' className='list-link'><li className='lisk-item'>Registrarse</li></Link>
             <Link to='/login' className='list-link'><li className='lisk-item'>Iniciar Sesión</li></Link>
         </ul>
+        <button className={classnav} aria-label="Abrir menú" onClick={handleClick}>
+            <i className="fas fa-bars"></i>
+        </button>
     </nav >;
 };
 

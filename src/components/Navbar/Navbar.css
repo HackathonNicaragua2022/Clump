@@ -2,6 +2,7 @@ nav {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    justify-content: space-between;
     background-color: var(--clump-1-3);
     color: var(--clump-on-primary);
 }
@@ -91,6 +92,33 @@ nav p {
 
     .img-logo {
         display: none;
+    }
+
+}
+
+@media (min-width: 1150px) {
+
+    .classul-close {
+        width: 60%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        list-style: none;
+        display: block;
+
+    }
+
+    .nav-toggle {
+        color: white;
+        background: none;
+        border: none;
+        font-size: 30px;
+        padding: 0 20px;
+        line-height: 60px;
+        display: none;
+        float: left;
+        justify-content: start;
+        align-items: start;
     }
 
 }
