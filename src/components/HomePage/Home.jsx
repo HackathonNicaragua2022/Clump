@@ -25,7 +25,7 @@ const Home = () => {
                 <img src={aula} alt="Aula" />
                 <div>
                     <h2>¡SEA BIENVENIDO!</h2>
-                    <p>A Class Clump, platoforma de aprendizaje dinamica y de uso facil con Realidad aumentada</p>
+                    <p>A Class Clump, plataforma de aprendizaje dinamica y de uso facil con Realidad aumentada</p>
                     <a href='/dashboard' className='ir-inicio'>Cursos</a>
                 </div>
             </div>

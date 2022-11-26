@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
 .home {
     width: 100%;
     display: flex;
@@ -123,4 +124,90 @@
 li {
     font-size: 25px;
     padding: 40px;
+}
+
+/*Responsive Homepage*/
+
+/*Inicio responsive*/
+@media (max-width: 800px) {
+    .inicio
+    {
+        flex-direction: column;
+    }
+    .inicio img 
+    {
+        margin-top: 30px;
+        width: 300px;
+    }
+    .inicio p 
+    {
+        font-size: 25px;
+        padding-bottom: 30px;
+        text-align: center;
+        font-size: 20px;
+    }
+    .inicio a 
+    {
+        margin-bottom: 10px;
+    }
+    .func h2
+    {
+        text-align: center;
+        font-size: 25px;
+        padding-top: 10px;
+    }
+    .desc
+    {
+        padding-left: 30px;
+        padding-top: 10px;
+        flex-direction: column;
+    }
+    .desc p 
+    {
+        padding-bottom: 20px;
+        text-align: center;
+        
+    }
+    .card-desc img 
+    {
+        width: 180px;
+    }
+    .card-desc p 
+    {
+        padding: 9px 4px;
+        padding-bottom: 20px;
+    }
+
+    /*usos responsive*/
+    .usos 
+    {
+        margin-top: 50px;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+    .usos h2
+    {
+        text-align: center;
+        font-size: 40px;
+    }
+    .uso
+    {
+        flex-direction: column;
+        text-align: center;
+    }
+    .uso img
+    {
+        display: none;
+    }
+
+}
+@media (max-width: 750px)
+{
+    .inicio h2
+    {
+        padding-top: 10px;
+        text-align: center;
+        padding: 10px 10px;
+    }
 }
