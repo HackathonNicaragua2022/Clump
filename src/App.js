@@ -83,14 +83,14 @@ function App() {
           height: '100%'
         }}>
           <Sidebar breakpoint={MidBreakpoint} />
-          {/* <Grid
+          {<Grid
             items={items}
             style={{
               height: '100%',
               overflow: 'auto'
             }}
-          /> */
-          <CourseForm/>
+          /> 
+          /* <CourseForm/> */
           }
         </div>}></Route>
 
