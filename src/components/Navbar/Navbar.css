@@ -36,12 +36,12 @@ nav p {
     list-style: none;
 }
 
-nav .classul li {
+.lisk-item {
     cursor: pointer;
     font-size: 35px;
 }
 
-nav .classul a {
+.list-link {
     color: white;
     text-decoration: none;
 }
@@ -51,6 +51,7 @@ nav .classul a {
 }
 
 .nav-active {
+
     color: white;
     background: none;
     border: none;
@@ -64,5 +65,32 @@ nav .classul a {
 }
 
 .classul-close {
+    width: 60%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    list-style: none;
     display: none;
+
+}
+
+@media (max-width: 1150px) {
+
+    .nav-toggle {
+        color: white;
+        background: none;
+        border: none;
+        font-size: 30px;
+        padding: 0 20px;
+        line-height: 60px;
+        display: block;
+        float: left;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .img-logo {
+        display: none;
+    }
+
 }
