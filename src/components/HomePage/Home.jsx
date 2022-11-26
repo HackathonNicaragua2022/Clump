@@ -17,7 +17,7 @@ const Home = () => {
         if (auth.currentUser !== null) {
             navigate('/dashboard');
         }
-    }, []);
+    }, [auth.currentUser]);
 
     return (
         <div className='home'>

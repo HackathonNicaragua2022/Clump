@@ -52,11 +52,11 @@ const Sidebar = ({ breakpoint, ...props }) => {
     useEffect(() => {
         (async () => {
             if (auth.currentUser === null) {
-                pushToast({
+                dispatch(pushToast({
                     title: "Atencion",
                     description: "Inicia sesion primero",
                     isAlert: false
-                });
+                }));
                 navigate('/');
                 return;
             }
@@ -67,13 +67,30 @@ const Sidebar = ({ breakpoint, ...props }) => {
         })();
     }, [auth.currentUser]);
 
+    const onLogout = async () => {
+        try {
+            await auth.signOut();
+            dispatch(pushToast({
+                title: "Cerrar Sesion",
+                description: "Sesion cerrada con exito"
+            }));
+            navigate('/');
+        } catch (error) {
+            dispatch(pushToast({
+                title: "Cerrar Sesion",
+                description: `No se ha podido cerrar la sesion: ${error.message}`,
+                isAlert: false
+            }));
+        }
+    };
+
     return <>
         <div className={classes} {...props}>
             <div className="header">
                 <UserDisplay
-                    username={user ? user.displayName : 'Anon'}
+                    username={user?.displayName ?? 'anon'}
                     role={
-                        user.isStudent
+                        user?.isStudent
                             ? "Estudiante"
                             : "Maestro"
                     }
@@ -113,7 +130,7 @@ const Sidebar = ({ breakpoint, ...props }) => {
                 <ul>
                     <li>
                         <img src={LogoutIcon} className="icon" alt="logout" />
-                        <p className="title">Cerrar Sesión</p>
+                        <p className="title" onClick={onLogout}>Cerrar Sesión</p>
                     </li>
                 </ul>
             </div>

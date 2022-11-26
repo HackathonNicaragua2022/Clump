@@ -17,6 +17,8 @@ import {
 } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
+import CourseForm from './components/CourseForm/CourseForm';
+import CourseMenu from './components/CourseMenu/CourseMenu';
 
 function App() {
 
@@ -81,13 +83,15 @@ function App() {
           height: '100%'
         }}>
           <Sidebar breakpoint={MidBreakpoint} />
-          <Grid
+          {/* <Grid
             items={items}
             style={{
               height: '100%',
               overflow: 'auto'
             }}
-          />
+          /> */
+          <CourseForm/>
+          }
         </div>}></Route>
 
 
